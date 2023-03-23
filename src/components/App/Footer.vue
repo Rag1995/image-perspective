@@ -3,7 +3,7 @@
     <div class="container pt-3 pb-5 flex-column flex-sm-row">
       <div>
         插圖繪師/圖片提供：
-        <BaseLink src="https://twitter.com/capybaraarumao">
+        <BaseLink href="https://twitter.com/capybaraarumao" target="_blank">
           アル毛
         </BaseLink>
       </div>

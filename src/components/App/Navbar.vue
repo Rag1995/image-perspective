@@ -14,7 +14,7 @@ import MdiGithub from '~icons/mdi/github'
           <DarkToggler />
         </li>
         <li class="nav-item">
-          <BaseNavLink>
+          <BaseNavLink href="https://github.com/Rag1995/image-perspective" target="_blank">
             <template #prefix-icon>
               <MdiGithub />
             </template>
