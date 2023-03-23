@@ -5,10 +5,6 @@ import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
-import autoprefixer from 'autoprefixer'
-import PostcssNested from 'postcss-nested'
-import PostcssHexrgba from 'postcss-hexrgba'
-// import PostcssCssVariables from 'postcss-css-variables'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -49,16 +45,6 @@ export default defineConfig(({ mode }) => {
         defaultClass: 'unplugin-icon',
       }),
     ],
-    css: {
-      postcss: {
-        plugins: [
-          autoprefixer,
-          PostcssNested,
-          PostcssHexrgba,
-        // PostcssCssVariables,
-        ],
-      },
-    },
     resolve: {
       alias: {
         '@/': `${resolve(__dirname, './src')}/`,

@@ -28,7 +28,7 @@ const list = ref([
 </script>
 
 <template>
-  <Swiper ref="el" :initial-slide="sliderIndex" :navigation="true" :pagination="true" loop :modules="[Navigation, Pagination]" class="img-swiper" @slide-change="onSwiperChange">
+  <Swiper ref="el" :initial-slide="sliderIndex" :navigation="true" :pagination="true" loop :modules="[Navigation, Pagination]" class="swiper" @slide-change="onSwiperChange">
     <template v-for="({ innerImg, outerImg }, idx) in list" :key="idx">
       <SwiperSlide>
         <div
