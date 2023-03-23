@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { TransitionPresets } from '@vueuse/core'
-import { usePerspectiveStore } from '@/store'
+import { usePerspectiveStore, useThemeStore } from '@/store'
 import { useRandom } from '@/utils'
 
 const store = usePerspectiveStore()
 const { r, rMax, rMin, x, y } = toRefs(store)
+
+const themeStore = useThemeStore()
+const { isDark } = toRefs(themeStore)
 
 const el = ref<HTMLElement>()
 const { height, width } = useElementBounding(el)
@@ -39,7 +42,7 @@ const doRandom = () => {
   <div class="bg-dark-subtle py-4">
     <div class="container text-center">
       <div class="d-flex flex-nowrap justify-content-center align-items-center gap-3">
-        <button type="button" class="btn btn-warning btn-sm text-nowrap" @click="doRandom()">
+        <button type="button" class="btn btn-sm text-nowrap" :class="isDark ? 'btn-warning' : 'btn-primary'" @click="doRandom()">
           隨機位置
         </button>
         <label for="radius" class="text-nowrap text-body">透鏡大小</label>
