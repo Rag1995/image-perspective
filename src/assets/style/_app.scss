@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-weight: 400;
+  font-style: normal;
+  src: url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2') format('woff2'),
+    url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff') format('woff'),
+    url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans TC Heavy';
+  font-weight: 400;
+  font-style: normal;
+  src: url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2') format('woff2'),
+    url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff') format('woff'),
+    url('//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf') format('opentype');
+}
+
+:root {
+  font-family: 'Noto Sans TC', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.87);
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
+  color-scheme: light dark;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-synthesis: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+#app {
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background-color: rgb(var(--bs-light-bg-subtle) var(--bs-bg-opacity));
+}
+
+a {
+  font-weight: 900;
+}

@@ -1,0 +1,51 @@
+{
+  "name": "image-perspective",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@vueuse/core": "^9.13.0",
+    "bootstrap": "^5.3.0-alpha1",
+    "pinia": "^2.0.33",
+    "swiper": "^9.1.1",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.36",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^18.11.9",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.47",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.27.0",
+    "eslint-plugin-vue": "^9.7.0",
+    "postcss": "^8.4.21",
+    "postcss-css-variables": "^0.18.0",
+    "postcss-hexrgba": "^2.1.0",
+    "postcss-nested": "^6.0.1",
+    "sass": "^1.59.2",
+    "sass-loader": "^13.2.0",
+    "stylelint": "^15.3.0",
+    "stylelint-config-clean-order": "^2.3.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-icons": "^0.15.3",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.1.0",
+    "vite-plugin-pages": "^0.29.0",
+    "vue-tsc": "^1.0.24"
+  }
+}

@@ -1,0 +1,87 @@
+// Configuration
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+
+$utilities: (
+  "font-size": (
+    /* rfs: true,*/
+    property: font-size,
+    class: fs,
+    values: $font-sizes,
+    responsive: true
+  )
+);
+
+@import "~bootstrap/scss/utilities";
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/placeholders";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+// Utilities
+@import "~bootstrap/scss/utilities/api";
+
+
+$form-range-thumb-focus-box-shadow: 0 0 0 1px $warning, 0 0 0 .25rem rgba($warning, .25);
+$form-range-thumb-bg: $warning;
+/* stylelint-disable-next-line function-no-unknown */
+$form-range-thumb-active-bg: tint-color($warning, 70%);
+$form-range-track-bg: var(--bs-warning-text);
+
+
+.view[data-bs-theme=dark] {
+  .form-range {
+    &::-webkit-slider-thumb {
+      @include gradient-bg($form-range-thumb-bg);
+
+      &:active {
+        @include gradient-bg($form-range-thumb-active-bg);
+      }
+    }
+
+
+    &:focus {
+      &::-webkit-slider-thumb {
+        box-shadow: $form-range-thumb-focus-box-shadow;
+      }
+
+      &::-moz-range-thumb {
+        box-shadow: $form-range-thumb-focus-box-shadow;
+      }
+    }
+  }}

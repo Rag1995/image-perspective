@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "cpylua.language-postcss"
+  ]
+}
