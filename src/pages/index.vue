@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { TransitionPresets } from '@vueuse/core'
 import { usePerspectiveStore, useThemeStore } from '@/store'
-import { useRandom } from '@/utils'
+import { getRandom } from '@/utils'
 
 const store = usePerspectiveStore()
 const { r, rMax, rMin, x, y } = toRefs(store)
@@ -11,7 +11,7 @@ const { isDark } = toRefs(themeStore)
 
 const el = ref<HTMLElement>()
 const { height, width } = useElementBounding(el)
-const doRandom = () => {
+const moveRandom = () => {
   const curX = ref(x.value)
   const curY = ref(y.value)
 
@@ -31,18 +31,20 @@ const doRandom = () => {
     y.value = newVal
   })
 
-  curX.value = useRandom(0, width.value)
-  curY.value = useRandom(0, height.value)
+  curX.value = getRandom(0, width.value)
+  curY.value = getRandom(0, height.value)
 }
 </script>
 
 <template>
-  <ImgSwiper ref="el" class="img-swiper" />
+  <div ref="el" class="swiper-container">
+    <ImgSwiper />
+  </div>
 
-  <div class="bg-dark-subtle py-4">
+  <div class="py-4">
     <div class="container text-center">
       <div class="d-flex flex-nowrap justify-content-center align-items-center gap-3">
-        <button type="button" class="btn btn-sm text-nowrap" :class="isDark ? 'btn-warning' : 'btn-primary'" @click="doRandom()">
+        <button type="button" class="btn btn-sm text-nowrap" :class="isDark ? 'btn-warning' : 'btn-primary'" @click="moveRandom()">
           隨機位置
         </button>
         <label for="radius" class="text-nowrap text-body">透鏡大小</label>
@@ -61,12 +63,10 @@ const doRandom = () => {
 </template>
 
 <style lang="postcss" scoped>
-.img-swiper {
+.swiper-container {
+  display: flex;
   flex: 1 0 400px;
-}
-
-/* stylelint-disable-next-line selector-max-id */
-#radius {
-  flex: 0 1 400px;
+  flex-flow: row nowrap;
+  align-items: stretch;
 }
 </style>

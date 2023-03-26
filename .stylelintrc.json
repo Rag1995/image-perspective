@@ -2,13 +2,26 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-sass-guidelines",
-    "stylelint-config-prettier",
     "stylelint-config-clean-order",
     "stylelint-config-html/vue",
     "stylelint-config-recommended-vue"
   ],
   "plugins": ["stylelint-scss"],
   "rules": {
+    "function-no-unknown": [
+      true, 
+      {
+        "ignoreFunctions": [
+          "v-bind",
+          "index",
+          "mix",
+          "tint-color",
+          "shade-color",
+          "tint",
+          "shade"
+        ]
+      }
+    ],
     "at-rule-no-unknown": null,
     "selector-class-pattern": null, 
     "scss/at-import-partial-extension-blacklist": null,

@@ -6,6 +6,11 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 
+import PostcssPresetEnv from 'postcss-preset-env'
+import PostcssNested from 'postcss-nested'
+import PostcssHexrgba from 'postcss-hexrgba'
+import PostcssColorFunction from 'postcss-color-function'
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -54,6 +59,18 @@ export default defineConfig(({ mode }) => {
         '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
       },
       extensions: ['.vue', '.js'],
+    },
+    css: {
+      postcss: {
+        plugins: [
+          PostcssPresetEnv,
+          PostcssNested,
+          PostcssHexrgba,
+          PostcssColorFunction({
+            preserveCustomProps: true,
+          }),
+        ],
+      },
     },
   }
 })

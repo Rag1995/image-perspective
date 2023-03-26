@@ -1,11 +1,11 @@
 <template>
   <footer class="text-center text-body bg-dark-subtle">
-    <div class="container pt-3 pb-5 flex-column flex-sm-row">
+    <div class="container py-4 flex-column flex-sm-row">
       <div>
         插圖繪師/圖片提供：
-        <BaseLink href="https://twitter.com/capybaraarumao" target="_blank">
+        <a href="https://twitter.com/capybaraarumao" target="_blank" class="fw-bolder">
           アル毛
-        </BaseLink>
+        </a>
       </div>
     </div>
   </footer>

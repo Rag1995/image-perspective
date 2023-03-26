@@ -20,5 +20,6 @@ declare module '@vue/runtime-core' {
     Perspective: typeof import('./src/components/Perspective.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TestSwiper: typeof import('./src/components/TestSwiper.vue')['default']
   }
 }

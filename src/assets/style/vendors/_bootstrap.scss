@@ -1,7 +1,15 @@
 // Configuration
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+
+$body-tertiary-bg: $gray-300;
+
 @import "~bootstrap/scss/variables-dark";
+
+$body-tertiary-bg-dark: $gray-800;
+$link-color-dark: $yellow-300 ;
+$link-hover-color-dark: $yellow-200 ;
+
 @import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 
@@ -25,6 +33,11 @@ $utilities: (
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/tables";
+
+$form-range-track-bg: var(--#{$prefix}tertiary-bg);
+$form-range-thumb-bg: var(--form-range-thumb-bg);
+$form-range-thumb-active-bg: var(--form-range-thumb-active-bg);
+
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
@@ -56,32 +69,15 @@ $utilities: (
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 
+:root,
+[data-bs-theme="light"] {
+  --form-range-thumb-bg: #{$primary};
+  --form-range-thumb-active-bg: tint-color($primary, 70%);
+}
 
-$form-range-thumb-focus-box-shadow: 0 0 0 1px $warning, 0 0 0 .25rem rgba($warning, .25);
-$form-range-thumb-bg: $warning;
-/* stylelint-disable-next-line function-no-unknown */
-$form-range-thumb-active-bg: tint-color($warning, 70%);
-$form-range-track-bg: var(--bs-warning-text);
-
-
-.view[data-bs-theme=dark] {
-  .form-range {
-    &::-webkit-slider-thumb {
-      @include gradient-bg($form-range-thumb-bg);
-
-      &:active {
-        @include gradient-bg($form-range-thumb-active-bg);
-      }
-    }
-
-
-    &:focus {
-      &::-webkit-slider-thumb {
-        box-shadow: $form-range-thumb-focus-box-shadow;
-      }
-
-      &::-moz-range-thumb {
-        box-shadow: $form-range-thumb-focus-box-shadow;
-      }
-    }
-  }}
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+    --form-range-thumb-bg: #{$warning};
+    --form-range-thumb-active-bg: tint-color($warning, 70%);
+  }
+};

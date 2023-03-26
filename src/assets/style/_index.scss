@@ -1,3 +1,7 @@
-@import './bootstrap';
-@import './swiper';
+// vendors
+@import './vendors/bootstrap';
+@import './vendors/swiper';
+
+@import './font';
+@import './root';
 @import './app';

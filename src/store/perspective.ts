@@ -1,6 +1,4 @@
 export const usePerspectiveStore = defineStore('perspective', () => {
-  const sliderIndex = ref(0)
-
   const x = ref(0)
   const y = ref(0)
   const r = ref(35)
@@ -11,5 +9,5 @@ export const usePerspectiveStore = defineStore('perspective', () => {
   const posY = computed(() => `${y.value}px`)
   const radius = computed(() => `${r.value}px`)
 
-  return { sliderIndex, x, y, r, rMax, rMin, posX, posY, radius }
+  return { x, y, r, rMax, rMin, posX, posY, radius }
 })
