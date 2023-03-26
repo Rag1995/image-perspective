@@ -76,25 +76,23 @@ const onSwiperChange = (swiper: SwiperObj) => {
   z-index: 3;
 }
 
-:deep {
-  .swiper-slide {
-    position: relative;
+.swiper-slide {
+  position: relative;
+}
+
+.view[data-bs-theme="dark"] {
+  .swiper {
+    --swiper-pagination-color: var(--bs-warning);
+    --swiper-navigation-color: var(--bs-warning);
   }
 
-  .view[data-bs-theme="dark"] {
-    .swiper {
-      --swiper-pagination-color: var(--bs-warning);
-      --swiper-navigation-color: var(--bs-warning);
-    }
+  .swiper-slide {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
 
-    .swiper-slide {
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-    }
-
-    .silhouette {
-      /* filter: contrast(0) brightness(0); */
-    }
+  .silhouette {
+    filter: contrast(0) brightness(0);
   }
 }
 </style>
